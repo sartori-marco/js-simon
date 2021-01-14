@@ -13,7 +13,7 @@ alert(numeri);
 console.log(numeri);
 
 // timer
- setTimeout(gioco, 3000);
+ setTimeout(gioco, 2000);
 
 
 // funzione numeri random
@@ -32,10 +32,10 @@ function gioco(){
     var giocatore = parseInt(prompt('Inserisci un numero da 1 a 100 compreso'));
 
     // faccio un controllo per verificare che i numeri inseriti siano validi
-    while ( (giocatore < 0) || (giocatore > 100) ){
+    while ( (giocatore <= 0) || (giocatore > 100) ){
       alert('Numero non valido');
       // richiedo il numero
-      giocatore = parseInt(prompt('Inserisci un numero da 1 a 100 compreso'));
+      giocatore = parseInt(prompt('Inserisci un numero corretto da 1 a 100 compreso'));
     }
     //controllo e pusho i numeri esatti nell'array [numeriEsatti]
     if  (numeri.includes(giocatore))  {
@@ -51,6 +51,13 @@ function gioco(){
   // guardo quanti sono i numeri esatti
   console.log(numeriGiusti);
 
+  // totale numeri inseriti
+  var prova = numeri.length;
+
+  // provo a fare una cosa carina in css
+  document.getElementById('numericorretti').innerHTML = 'I numeri che hai indovinato sono i seguenti:' + ' ' + numeriEsatti;
+
+  document.getElementById('totalenumeri').innerHTML = 'Il totale dei numeri che hai indovinato sono:' + ' ' + numeriGiusti + ' ' + 'su' + ' ' + prova;
 }
 
 
